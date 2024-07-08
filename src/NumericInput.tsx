@@ -9,6 +9,15 @@ interface NumericInputProps {
   className?: string;
 }
 
+/**
+ * A numeric input component that allows the user to enter a number and calls an `onChange` callback with the new value.
+ *
+ * @param value - The current value of the input.
+ * @param onChange - A callback function that is called when the input value changes, with the new value as a parameter.
+ * @param onBlur - An optional callback function that is called when the input loses focus, with the final value as a parameter.
+ * @param placeholder - An optional placeholder text to display in the input.
+ * @param className - An optional CSS class name to apply to the input.
+ */
 const NumericInput: FunctionComponent<NumericInputProps> = ({
   value,
   onChange,
