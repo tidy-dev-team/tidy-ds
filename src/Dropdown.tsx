@@ -2,6 +2,13 @@ import { h, FunctionalComponent } from "preact";
 import { useState } from "preact/hooks";
 import "!./Dropdown.css";
 
+/**
+ * Represents an option in a dropdown menu.
+ *
+ * @property {string|number} id - A unique identifier for the option.
+ * @property {string} name - The display name of the option.
+ * @property {any} [key: string] - Any additional properties associated with the option.
+ */
 export interface DropdownOption {
   id: string | number;
   name: string;
@@ -23,6 +30,15 @@ interface DropdownButtonProps {
   setIsOpen: (value: boolean) => void;
 }
 
+/**
+ * Renders a button that toggles the dropdown menu.
+ *
+ * @param selectedOption - The currently selected `DropdownOption`, or `null` if no option is selected.
+ * @param placeholder - The placeholder text to display when no option is selected.
+ * @param toggleDropdown - A function that toggles the visibility of the dropdown menu.
+ * @param setIsOpen - A function that sets the open state of the dropdown menu.
+ * @returns A JSX element representing the dropdown toggle button.
+ */
 const DropdownButton: FunctionalComponent<DropdownButtonProps> = ({
   selectedOption,
   placeholder,
@@ -48,6 +64,13 @@ interface DropdownMenuProps {
   renderOption?: (option: DropdownOption) => h.JSX.Element;
 }
 
+/**
+ * Renders a dropdown menu with the provided options.
+ *
+ * @param options - An array of `DropdownOption` objects representing the available options in the dropdown.
+ * @param handleSelect - A callback function that is called when the user selects an option.
+ * @param renderOption - An optional function to render a custom UI for each dropdown option.
+ */
 const DropdownMenu: FunctionalComponent<DropdownMenuProps> = ({
   options,
   handleSelect,
@@ -69,6 +92,15 @@ const DropdownMenu: FunctionalComponent<DropdownMenuProps> = ({
   </div>
 );
 
+/**
+ * A reusable dropdown component that allows users to select an option from a list.
+ *
+ * @param options - An array of `DropdownOption` objects representing the available options in the dropdown.
+ * @param selectedOption - The currently selected `DropdownOption`.
+ * @param onSelect - A callback function that is called when the user selects an option.
+ * @param placeholder - The placeholder text to display when no option is selected.
+ * @param renderOption - An optional function to render a custom UI for each dropdown option.
+ */
 const Dropdown: FunctionalComponent<DropdownProps> = ({
   options,
   selectedOption,
