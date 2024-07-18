@@ -1,6 +1,6 @@
 import { h, FunctionComponent } from "preact";
 import { useState } from "preact/hooks";
-
+import "./NumericInput.css";
 interface NumericInputProps {
   value: number;
   onChange: (newValue: number) => void;
@@ -50,7 +50,7 @@ const NumericInput: FunctionComponent<NumericInputProps> = ({
       onInput={handleInputChange}
       onBlur={handleBlur}
       placeholder={placeholder}
-      className={className}
+      className={`numeric-input ${className || ""}`}
     />
   );
 };
