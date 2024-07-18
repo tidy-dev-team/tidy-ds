@@ -21,7 +21,7 @@
 }
 
 .checkbox-input:checked::after {
-  content: '\2714';
+  content: '✓';
   font-size: 12px;
   color: white;
   position: absolute;
