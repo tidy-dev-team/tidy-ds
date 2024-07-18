@@ -1,6 +1,6 @@
 import { h, FunctionComponent } from "preact";
 import { useState } from "preact/hooks";
-import "./NumericInput.css";
+import "!./NumericInput.css";
 interface NumericInputProps {
   value: number;
   onChange: (newValue: number) => void;
