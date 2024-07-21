@@ -1,5 +1,5 @@
 import { h, FunctionComponent } from "preact";
-import { useState } from "preact/hooks";
+import { useState, useEffect } from "preact/hooks";
 import "!./NumericInput.css";
 interface NumericInputProps {
   value: number;
@@ -42,6 +42,10 @@ const NumericInput: FunctionComponent<NumericInputProps> = ({
       onBlur(parseFloat(inputValue));
     }
   };
+
+  useEffect(() => {
+    setInputValue(value.toString());
+  }, [value]);
 
   return (
     <input
