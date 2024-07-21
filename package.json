@@ -1,6 +1,6 @@
 {
   "name": "tidy-ds",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Components for Tidy plugins",
   "main": "index.js",
   "scripts": {
