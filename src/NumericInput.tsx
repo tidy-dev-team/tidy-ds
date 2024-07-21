@@ -1,6 +1,15 @@
 import { h, FunctionComponent } from "preact";
 import { useState, useEffect } from "preact/hooks";
 import "!./NumericInput.css";
+/**
+ * Defines the props for the `NumericInput` component.
+ *
+ * @property {number} value - The current value of the input.
+ * @property {(newValue: number) => void} onChange - A callback function that is called when the input value changes, with the new value as a parameter.
+ * @property {(value: number) => void} [onBlur] - An optional callback function that is called when the input loses focus, with the final value as a parameter.
+ * @property {string} [placeholder] - An optional placeholder text to display in the input.
+ * @property {string} [className] - An optional CSS class name to apply to the input.
+ */
 interface NumericInputProps {
   value: number;
   onChange: (newValue: number) => void;
