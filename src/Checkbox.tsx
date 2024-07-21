@@ -1,5 +1,5 @@
 import { h } from "preact";
-import { useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 import "!./Checkbox.css";
 
 interface CheckboxProps {
@@ -24,6 +24,10 @@ function Checkbox({ label, checked, onChange }: CheckboxProps) {
     setIsChecked(newValue);
     onChange(newValue);
   };
+
+  useEffect(() => {
+    setIsChecked(checked);
+  }, [checked]);
 
   return (
     <label className="checkbox-container">
