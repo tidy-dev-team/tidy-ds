@@ -16,7 +16,7 @@ interface CheckboxProps {
  * @param onChange - A callback function that is called when the checkbox is checked or unchecked. The function receives the new checked state as a parameter.
  * @returns A React element representing the checkbox and label.
  */
-function Checkbox({ label, checked, onChange }: CheckboxProps) {
+const Checkbox = ({ label, checked, onChange }: CheckboxProps) => {
   const [isChecked, setIsChecked] = useState(checked);
 
   const handleChange = (event: h.JSX.TargetedEvent<HTMLInputElement>) => {
@@ -40,6 +40,6 @@ function Checkbox({ label, checked, onChange }: CheckboxProps) {
       <span>{label}</span>
     </label>
   );
-}
+};
 
 export default Checkbox;
