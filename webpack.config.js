@@ -40,7 +40,7 @@ const commonConfig = {
 module.exports = [
   {
     ...commonConfig,
-    entry: "./src/index.ts",
+    entry: "./index.ts",
     output: {
       filename: "index.cjs.js",
       path: path.resolve(__dirname, "dist"),
@@ -49,7 +49,7 @@ module.exports = [
   },
   {
     ...commonConfig,
-    entry: "./src/index.ts",
+    entry: "./index.ts",
     output: {
       filename: "index.esm.js",
       path: path.resolve(__dirname, "dist"),
