@@ -1,6 +1,6 @@
 import { h, FunctionComponent } from "preact";
 import { useState, useEffect } from "preact/hooks";
-import "!./NumericInput.css";
+import "./NumericInput.css";
 /**
  * Defines the props for the `NumericInput` component.
  *

@@ -1,6 +1,6 @@
 import { h, FunctionalComponent } from "preact";
 import { useState } from "preact/hooks";
-import "!./Dropdown.css";
+import "./Dropdown.css";
 
 /**
  * Represents an option in a dropdown menu.

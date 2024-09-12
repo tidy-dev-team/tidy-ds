@@ -1,6 +1,6 @@
 import { h } from "preact";
 import { useEffect, useState } from "preact/hooks";
-import "!./Checkbox.css";
+import "./Checkbox.css";
 
 interface CheckboxProps {
   label: string;
