@@ -1,4 +1,9 @@
 {
-  "presets": ["@babel/env", ["@babel/typescript", { "jsxPragma": "h" }]],
-  "plugins": [["@babel/transform-react-jsx", { "pragma": "h" }]]
+  "presets": [
+    ["@babel/preset-env", { "targets": "> 0.25%, not dead" }],
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    ["@babel/plugin-transform-react-jsx", { "pragma": "h" }] // Ensure JSX is transpiled for Preact
+  ]
 }

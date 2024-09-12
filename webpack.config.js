@@ -1,28 +1,34 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./index.ts",
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
-    library: "myComponentLibrary",
-    libraryTarget: "umd",
+  entry: "./src/index.ts",
+  output: [
+    {
+      filename: "index.cjs.js",
+      path: path.resolve(__dirname, "dist"),
+      libraryTarget: "commonjs2",
+    },
+    {
+      filename: "index.esm.js",
+      path: path.resolve(__dirname, "dist"),
+      library: {
+        type: "module",
+      },
+    },
+  ],
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
   },
   module: {
     rules: [
       {
         test: /\.(ts|tsx)$/,
-        exclude: /node_modules/,
         use: "babel-loader",
+        exclude: /node_modules/,
       },
     ],
   },
-  resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
-    alias: {
-      react: "preact/compat",
-      "react-dom": "preact/compat",
-    },
+  externals: {
+    preact: "preact", // Treat Preact as an external dependency
   },
-  mode: "production",
 };
